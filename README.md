@@ -11,14 +11,11 @@ ROS2 기반 로봇 암 제어, AMR(자율주행로봇) 시스템 구축, 스마�
 
 ## 📌 Projects Overview
 
-* **Project 1. Triangular Cup Stacking Robot**
-  ROS2 기반 로봇 암 + 그리퍼를 활용해 삼각뿔 컵 조형물을 자동으로 구축하는 프로젝트
+| **Project 1. Triangular Cup Stacking Robot** | **Project 2. AMR 기반 자재 운반 자동화 공장** | **Project 3. Smart Factory Automated Simulation** |
+|:--------------------------------------------:|:---------------------------------------------:|:------------------------------------------------:|
+| <img width="345" height="444" alt="image" src="https://github.com/user-attachments/assets/56dc50b2-ea75-410c-8e3c-57e9f1356f6e" /> | <img width="345" height="444" alt="image" src="https://github.com/user-attachments/assets/c4d06500-04e0-4b02-ae1e-90fbc7d567bc" /> | <img width="345" height="444" alt="image" src="https://github.com/user-attachments/assets/a56f00ac-c1da-4c86-aa1f-feacb447417b" /> |
+| ROS2 기반 로봇 암 + 그리퍼를 활용해 삼각뿔 컵 조형물을 자동으로 구축하는 프로젝트 | Vision + ROS2 + PyQt 기반, 박스 픽업 및 컨베이어 이동을 자동화한 AMR 시스템 구축 | Gazebo 시뮬레이션 환경 제작 및 다중 AMR 경로 최적화 기반 스마트 팩토리 설계 |
 
-* **Project 2. AMR 기반 자재 운반 자동화 공장**
-  Vision + ROS2 + PyQt 기반, 박스 픽업 및 컨베이어 이동을 자동화한 AMR 시스템 구축
-
-* **Project 3. Smart Factory Automated Simulation**
-  Gazebo 시뮬레이션 환경 제작 및 다중 AMR 경로 최적화 기반 스마트 팩토리 설계
 
 ---
 
@@ -43,25 +40,53 @@ ROS2 기반 로봇 암 제어, AMR(자율주행로봇) 시스템 구축, 스마�
 
 ---
 
-## 🧠 핵심 알고리즘
+## 🧠 핵심 알고리즘 (Fast vs Single Stacking)
 
-### ✔ Fast Stacking (속도 중심)
+<table>
+  <tr>
+    <th align="center">✔ Fast Stacking (속도 중심)</th>
+    <th align="center">✔ Single Stacking (정확도 중심)</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img width="350" src="https://github.com/user-attachments/assets/81109e26-6403-45ed-bbb6-54225e42a4c0" />
+    </td>
+    <td align="center">
+      <img width="350" src="https://github.com/user-attachments/assets/1733a068-e033-40a5-9949-c2a23aa0c922" />
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li>여러 개의 컵을 동시에 잡기 위한 <strong>Wide-grip picking 로직</strong></li>
+        <li>이동 중 컵을 지지하는 <strong>툴 각도 보정</strong></li>
+        <li>삼각형 외심 좌표 기반 배치</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li>Force control 기반, 실제 컵 <strong>position 추정</strong></li>
+        <li>Bézier 곡선 기반 <strong>부드러운 경로 생성</strong></li>
+        <li>가장 먼 컵부터 배치하여 충돌 경로 방지</li>
+        <li>뒤집힌 컵을 올리기 위한 <strong>Flip motion</strong> 구현</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-* 여러 개의 컵을 동시에 잡기 위한 **Wide-grip picking 로직**
-* 이동 시 그리퍼가 컵을 지지하도록 **툴 각도 보정**
-* 삼각형 외심 좌표를 기준으로 배치
+---
 
-### ✔ 문제점 & 개선
+## 🔧 문제점 및 개선점
 
-* 초기 컵 위치 오차 → 성공률 40%
-* Release 시 아래층 컵 밀림 → 불안정성 발생
+### ❗ 문제점 (Fast Stacking)
+- 초기 컵 위치 오차 → 성공률 **40%**
+- Release 시 아래층 컵 밀림 → 구조적 불안정성
 
-### ✔ Single Stacking (정확도 중심)
-
-* Force control 기반, 각 컵의 실제 position 측정하여 단독 적재
-* Pose waypoint를 **Bézier 곡선**으로 구성해 부드러운 MoveIt 경로 생성
-* 가장 먼 컵부터 배치해 충돌 경로 방지
-* 조형물 꼭대기 컵을 뒤집어 배치하기 위한 **Flip motion** 구현
+### ✅ 개선점 (Single Stacking)
+- Force Control 도입 → **정확한 위치 보정**
+- Bézier 경로 생성 → **부드럽고 안전한 이동**
+- 가장 먼 컵부터 배치 → **경로 간섭 최소화**
+- Flip motion 구현 → **조형물 꼭대기 컵 뒤집기 가능**
 
 ---
 
