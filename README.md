@@ -7,12 +7,23 @@ ROS2 기반 로봇 암 제어, AMR(자율주행로봇) 시스템 구축, 스마�
 
 ## 📌 Projects Overview
 
-| [**Project 1. 협동로봇 컵스태킹**](#pj1) | [**Project 2. AMR 기반 자재 운반 자동화 공장**](#pj2) | [**Project 3. 가상 팩토리 환경 제작**](#pj3) |
-|:--------------------------------------------:|:---------------------------------------------:|:------------------------------------------------:|
-| <img width="345" height="444" alt="image" src="https://github.com/user-attachments/assets/56dc50b2-ea75-410c-8e3c-57e9f1356f6e" /> | <img width="345" height="444" alt="image" src="https://github.com/user-attachments/assets/c4d06500-04e0-4b02-ae1e-90fbc7d567bc" /> | <img width="345" height="444" alt="image" src="https://github.com/user-attachments/assets/a56f00ac-c1da-4c86-aa1f-feacb447417b" /> |
-| ROS2 기반 로봇 암 + 그리퍼를 활용해 삼각뿔 컵 조형물을 자동으로 구축하는 프로젝트 | Vision + ROS2 + PyQt 기반, 박스 픽업 및 컨베이어 이동을 자동화한 AMR 시스템 구축 | Gazebo 시뮬레이션 환경 제작 및 다중 AMR 기반 팩토리 설계 |
-
-
+<table style="width:100%; table-layout:fixed;">
+  <tr>
+    <th style="width:33%; text-align:center;"> <a href="#pj1"><b>Project 1. 협동로봇 컵스태킹</b></a> </th>
+    <th style="width:33%; text-align:center;"> <a href="#pj2"><b>Project 2. AMR 기반 자재 운반 자동화</b></a> </th>
+    <th style="width:33%; text-align:center;"> <a href="#pj3"><b>Project 3. 가상 팩토리 환경 제작</b></a> </th>
+  </tr>
+  <tr>
+    <td style="width:33%; text-align:center;"><img width="345" height="444" alt="image" src="./readme_feature/pjt1.png" /></td>
+    <td style="width:33%; text-align:center;"><img width="345" height="444" alt="image" src="./readme_feature/pjt2.png" /></td>
+    <td style="width:33%; text-align:center;"><img width="345" height="444" alt="image" src="./readme_feature/pjt3.png" /></td>
+  </tr>
+  <tr>
+    <td style="width:33%; vertical-align:top;">ROS2 기반 로봇 암 + 그리퍼를 활용해 삼각뿔 컵 조형물을 자동으로 구축하는 프로젝트</td>
+    <td style="width:33%; vertical-align:top;">Vision + ROS2 + PyQt 기반, 박스 픽업 및 컨베이어 이동을 자동화한 AMR 시스템 구축</td>
+    <td style="width:33%; vertical-align:top;">Gazebo 시뮬레이션 환경 제작 및 다중 AMR 기반 팩토리 설계</td>
+  </tr>
+</table>
 ---
 
 # 🦾 Project 1. 협동로봇(두산로봇) 컵스태킹<a id = "pj1"></a>
@@ -145,7 +156,7 @@ ROS2 Node 기반의 **메인 로봇 컨트롤 클래스**
 ---
 <br>
 
-# 🚚 Project 2. AMR 기반 자재 운반 자동화 공장<a id = "pj2"></a>
+# 🚚 Project 2. AMR 기반 자재 운반 자동화<a id = "pj2"></a>
 
 ### 📎 기술 스택
 
@@ -160,23 +171,23 @@ ROS2 Node 기반의 **메인 로봇 컨트롤 클래스**
 
 ## 🎯 프로젝트 개요
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table style="width:100%; border:0; border-spacing:0; border-collapse:collapse;">
   <tr>
-    <td width="20%"><img width="100%" src="./readme_feature/2_move_1.png"></td>
-    <td width="20%"><img width="100%" src="./readme_feature/2_move_2.png"></td>
-    <td width="20%"><img width="100%" src="./readme_feature/2_move_3.png"></td>
-    <td width="20%"><img width="100%" src="./readme_feature/2_move_4.png"></td>
-    <td width="20%"><img width="100%" src="./readme_feature/2_move_5.png"></td>
+    <td style="width:20%; border:0;"><img width="100%" src="./readme_feature/2_move_1.png"></td>
+    <td style="width:20%; border:0;"><img width="100%" src="./readme_feature/2_move_2.png"></td>
+    <td style="width:20%; border:0;"><img width="100%" src="./readme_feature/2_move_3.png"></td>
+    <td style="width:20%; border:0;"><img width="100%" src="./readme_feature/2_move_4.png"></td>
+    <td style="width:20%; border:0;"><img width="100%" src="./readme_feature/2_move_5.png"></td>
   </tr>
 </table>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table style="width:100%; border:0; border-spacing:0; border:0; border-collapse:collapse; box-shadow:none;">
   <tr>
-    <td width="60%" valign="top" align="center">
+    <td style="width:60%; border:0; vertical-align:top; text-align:center;">
       <img width="100%" src="./readme_feature/2_system.png" />
     </td>
-    <td width="40%" valign="top" align="left">
-      <ul style="margin:0; padding-left:13px;">
+    <td style="width:40%; border:0; vertical-align:top; text-align:left;">
+      <ul style="margin:0; padding-left:13px; list-style-type:disc;">
         <li>GUI에서 특정 박스 운반 명령 전송</li><br>
         <li>AMR이 아루코 마커 기반 위치 인식</li><br>
         <li>박스 픽업 → 필요 수량만큼 컨베이어로 이동</li><br>
