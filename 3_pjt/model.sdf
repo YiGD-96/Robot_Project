@@ -1,0 +1,253 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="my_ground_plane">
+    <static>false</static> <!-- 움직이는 모델 -->
+
+    <!-- 제일 처음 큰 박스 -->
+    <link name="first_1">
+      <pose>-4 1.5 0.15 0 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.2</ixx> <iyy>0.2</iyy> <izz>0.2</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision_1">
+        <geometry>
+          <box><size>2.0 4.0 0.3</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual_1">
+        <geometry>
+          <box><size>1.5 0.5 0.3</size></box>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient> <!-- 흰색 -->
+        </material>
+      </visual>
+    </link>    
+
+    <!-- back_1 -->
+    <link name="back_1">
+      <pose>0 -2 0.1 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.2</ixx> <iyy>0.2</iyy> <izz>0.2</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision_1">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual_1">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+        <material>
+          <ambient>0 0 1 1</ambient> <!-- 파란색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- back_2 -->
+    <link name="back_2">
+      <pose>1 -2 0.1 0 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.2</ixx> <iyy>0.2</iyy> <izz>0.2</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision_2">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual_2">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient> <!-- 빨간색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- back_3 -->
+    <link name="back_3">
+      <pose>2 -2 0.1 0 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.2</ixx> <iyy>0.2</iyy> <izz>0.2</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision_3">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual_3">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient> <!-- 초록색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- back_4 -->
+    <link name="back_4">
+      <pose>3 -2 0.1 0 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.2</ixx> <iyy>0.2</iyy> <izz>0.2</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision_4">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual_4">
+        <geometry>
+          <box><size>0.5 1.5 0.2</size></box>
+        </geometry>
+        <material>
+          <ambient>1 1 0 1</ambient> <!-- 노란색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 왼쪽 벽 -->
+    <link name="wall_left">
+      <pose>-3 0 0.3 0 0 0</pose> <!-- 컨베이어 왼쪽 -->
+      <collision name="wall_left_collision">
+        <geometry>
+          <box><size>0.1 10 0.6</size></box> <!-- 얇은 벽 -->
+        </geometry>
+      </collision>
+      <visual name="wall_left_visual">
+        <geometry>
+          <box><size>0.1 10 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 오른쪽 벽 -->
+    <link name="wall_right">
+      <pose>4 1.5 0.3 0 0 0</pose> <!-- 컨베이어 오른쪽 -->
+      <collision name="wall_right_collision">
+        <geometry>
+          <box><size>0.1 9 0.6</size></box>
+        </geometry>
+      </collision>
+      <visual name="wall_right_visual">
+        <geometry>
+          <box><size>0.1 9 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 앞쪽 벽 -->
+    <link name="wall_front">
+      <pose>2 -5 0.3 0 0 0</pose> <!-- 컨베이어 앞쪽 -->
+      <collision name="wall_front_collision">
+        <geometry>
+          <box><size>10 0.1 0.6</size></box>
+        </geometry>
+      </collision>
+      <visual name="wall_front_visual">
+        <geometry>
+          <box><size>10 0.1 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 뒷쪽 벽 -->
+    <link name="wall_back">
+      <pose>0.5 5 0.3 0 0 0</pose> <!-- 컨베이어 뒤쪽 -->
+      <collision name="wall_back_collision">
+        <geometry>
+          <box><size>7 0.1 0.6</size></box>
+        </geometry>
+      </collision>
+      <visual name="wall_back_visual">
+        <geometry>
+          <box><size>7 0.1 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 바깥 위쪽 벽 -->
+    <link name="out_wall_back">
+      <pose>5.5 6 0.3 0 0 0</pose>
+      <collision name="wall_back_collision">
+        <geometry>
+          <box><size>3 0.1 0.6</size></box>
+        </geometry>
+      </collision>
+      <visual name="wall_back_visual">
+        <geometry>
+          <box><size>3 0.1 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 바깥 오른쪽 벽1 -->
+    <link name="out_wall_right1">
+      <pose>7 5.5 0.3 0 0 0</pose>
+      <collision name="wall_back_collision">
+        <geometry>
+          <box><size>0.1 1 0.6</size></box>
+        </geometry>
+      </collision>
+      <visual name="wall_back_visual">
+        <geometry>
+          <box><size>0.1 1 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+    <!-- 바깥 오른쪽 벽2 -->
+    <link name="out_wall_right2">
+      <pose>7 -4 0.3 0 0 0</pose> <!-- 컨베이어 뒤쪽 -->
+      <collision name="wall_back_collision">
+        <geometry>
+          <box><size>0.1 2 0.6</size></box>
+        </geometry>
+      </collision>
+      <visual name="wall_back_visual">
+        <geometry>
+          <box><size>0.1 2 0.6</size></box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient> <!-- 밝은 회색 -->
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

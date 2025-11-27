@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+
+    <include>
+      <uri>model://my_ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>0.239179 -7.79828 7.55307 0 0.729797 1.5128</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <!-- 고정된 카메라를 포함하는 모델 -->
+    <model name="fixed_camera_1">
+      <static>true</static> <!-- 모델을 고정 -->
+      <pose>1 1 4 -1.57 1.57 0</pose> <!-- x, y, z, roll, pitch, yaw -->
+
+      <link name="camera1_link">
+        <sensor name="camera" type="camera">
+          <pose>0 0 0 0 0 0</pose> <!-- 센서 위치 -->
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>480</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <update_rate>30</update_rate>
+          <always_on>1</always_on>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <ros>
+              <namespace>/fixed_camera_1</namespace>
+              <remapping>image_raw:=image</remapping>
+            </ros>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    
+    <!-- 고정된 카메라를 포함하는 모델 -->
+    <model name="fixed_camera_2">
+      <static>true</static> <!-- 모델을 고정 -->
+      <pose>2 0 10 -1.57 1.57 0</pose> <!-- x, y, z, roll, pitch, yaw -->
+
+      <link name="camera2_link">
+        <sensor name="camera" type="camera">
+          <pose>0 0 0 0 0 0</pose> <!-- 센서 위치 -->
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>640</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <update_rate>30</update_rate>
+          <always_on>1</always_on>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <ros>
+              <namespace>/fixed_camera_2</namespace>
+              <remapping>image_raw:=image</remapping>
+            </ros>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+
+    <!-- 고정된 카메라를 포함하는 모델 -->
+    <model name="fixed_camera_3">
+      <static>true</static> <!-- 모델을 고정 -->
+      <pose>-3.29 0.9 0.82 0 -0.2 1.8</pose> <!-- x, y, z, roll, pitch, yaw -->
+
+      <link name="camera3_link">
+        <sensor name="camera" type="camera">
+          <pose>0 0 0 0 0 0</pose> <!-- 센서 위치 -->
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>640</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <update_rate>30</update_rate>
+          <always_on>1</always_on>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <ros>
+              <namespace>/fixed_camera_3</namespace>
+              <remapping>image_raw:=image</remapping>
+            </ros>
+          </plugin>
+        </sensor>
+      </link>
+    </model>
+    
+
+    <model name="turtlebot3_world">
+      <static>1</static>
+      <include>
+        <uri>model://turtlebot3_world</uri>
+      </include>
+    </model>
+    
+    <!--컨베이어 벨트 yolo-->
+    <model name="conveyor_all">
+      <pose>-4 1.5 0.6 0 0 0</pose>
+      <include>
+        <uri>model://conveyor_belt</uri>
+      </include>
+    </model>
+
+    <!-- 움직이는 컨베이어 벨트 -->
+    <model name="conveyor_front_1">
+      <pose>-2 0 0.1 0 0 0</pose>
+      <include>
+        <uri>model://conveyor_belt</uri>
+      </include>
+    </model>
+
+    <model name="conveyor_front_2">
+      <pose>-2 1 0.1 0 0 0</pose>
+      <include>
+        <uri>model://conveyor_belt</uri>
+      </include>
+    </model>
+    
+    <model name="conveyor_front_3">
+      <pose>-2 2 0.1 0 0 0</pose>
+      <include>
+        <uri>model://conveyor_belt</uri>
+      </include>
+    </model>
+
+    <model name="conveyor_front_4">
+      <pose>-2 3 0.1 0 0 0</pose>
+      <include>
+        <uri>model://conveyor_belt</uri>
+      </include>
+    </model>
+
+    <!-- 덤프트럭 4대 추가 -->
+    <model name="dump_truck_1">
+      <pose>8.5 -2 0 0 0 0</pose>
+      <include>
+        <uri>model://dump_truck</uri>
+      </include>
+    </model>
+
+    <model name="dump_truck_2">
+      <pose>8.5 0 0 0 0 0</pose>
+      <include>
+        <uri>model://dump_truck</uri>
+      </include>
+    </model>
+
+    <model name="dump_truck_3">
+      <pose>8.5 2 0 0 0 0</pose>
+      <include>
+        <uri>model://dump_truck</uri>
+      </include>
+    </model>
+
+    <model name="dump_truck_4">
+      <pose>8.5 4 0 0 0 0</pose>
+      <include>
+        <uri>model://dump_truck</uri>
+      </include>
+    </model>
+
+  </world>
+</sdf>
