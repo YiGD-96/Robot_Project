@@ -1,29 +1,46 @@
-# Robot_Project - 두산로보틱스 프로젝트
-
-실제 로봇 제어 및 자동화 공정 프로젝트 경험을 기반으로 구성한 포트폴리오입니다.
-ROS2 기반 로봇 암 제어, AMR(자율주행로봇) 시스템 구축, 스마트 팩토리 시뮬레이션 모델링 등 실제 산업 환경에서의 문제 해결 경험을 담았습니다.
-
----
+# Robot_Project
 
 ## 📌 Projects Overview
 
-<table style="width:100%; table-layout:fixed;">
+<table width="100%" style="table-layout:fixed;">
   <tr>
-    <th style="width:33%; text-align:center;"> <a href="#pj1"><b>Project 1. 협동로봇 컵스태킹</b></a> </th>
-    <th style="width:33%; text-align:center;"> <a href="#pj2"><b>Project 2. AMR 기반 자재 운반 자동화</b></a> </th>
-    <th style="width:33%; text-align:center;"> <a href="#pj3"><b>Project 3. 가상 팩토리 환경 제작</b></a> </th>
+    <th width="33%" align="center">
+      <a href="#pj1"><b>Project 1. 협동로봇 컵스태킹</b></a>
+    </th>
+    <th width="33%" align="center">
+      <a href="#pj2"><b>Project 2. AMR 기반 자재 운반 자동화</b></a>
+    </th>
+    <th width="33%" align="center">
+      <a href="#pj3"><b>Project 3. 가상 팩토리 환경 제작</b></a>
+    </th>
   </tr>
   <tr>
-    <td style="width:33%; text-align:center;"><img width="345" height="444" alt="image" src="./readme_feature/pjt1.png" /></td>
-    <td style="width:33%; text-align:center;"><img width="345" height="444" alt="image" src="./readme_feature/pjt2.png" /></td>
-    <td style="width:33%; text-align:center;"><img width="345" height="444" alt="image" src="./readme_feature/pjt3.png" /></td>
+    <td width="33%" align="center">
+      <img src="./readme_feature/pjt1.png"
+           style="width:100%; height:400px; object-fit:cover;" />
+    </td>
+    <td width="33%" align="center">
+      <img src="./readme_feature/pjt2.png"
+           style="width:100%; height:400px; object-fit:cover;" />
+    </td>
+    <td width="33%" align="center">
+      <img src="./readme_feature/pjt3.png"
+           style="width:100%; height:400px; object-fit:cover;" />
+    </td>
   </tr>
   <tr>
-    <td style="width:33%; vertical-align:top;">ROS2 기반 로봇 암 + 그리퍼를 활용해 삼각뿔 컵 조형물을 자동으로 구축하는 프로젝트</td>
-    <td style="width:33%; vertical-align:top;">Vision + ROS2 + PyQt 기반, 박스 픽업 및 컨베이어 이동을 자동화한 AMR 시스템 구축</td>
-    <td style="width:33%; vertical-align:top;">Gazebo 시뮬레이션 환경 제작 및 다중 AMR 기반 팩토리 설계</td>
+    <td width="33%" style="vertical-align:top;">
+      ROS2 기반 로봇 암 + 그리퍼를 활용해 삼각뿔 컵 조형물을 자동으로 구축하는 프로젝트
+    </td>
+    <td width="33%" style="vertical-align:top;">
+      Vision + ROS2 + PyQt 기반, 박스 픽업 및 컨베이어 이동을 자동화한 AMR 시스템 구축
+    </td>
+    <td width="33%" style="vertical-align:top;">
+      Gazebo 시뮬레이션 환경 제작 및 다중 AMR 기반 팩토리 설계
+    </td>
   </tr>
 </table>
+
 ---
 
 # 🦾 Project 1. 협동로봇(두산로봇) 컵스태킹<a id = "pj1"></a>
@@ -187,13 +204,13 @@ ROS2 Node 기반의 **메인 로봇 컨트롤 클래스**
       <img width="100%" src="./readme_feature/2_system.png" />
     </td>
     <td style="width:40%; border:0; vertical-align:top; text-align:left;">
-      <ul style="margin:0; padding-left:13px; list-style-type:disc;">
+      <ol style="margin:0; list-style-type:disc;">
         <li>GUI에서 특정 박스 운반 명령 전송</li><br>
         <li>AMR이 아루코 마커 기반 위치 인식</li><br>
         <li>박스 픽업 → 필요 수량만큼 컨베이어로 이동</li><br>
         <li>바구니로 이동 후 하역</li><br>
         <li>지정 위치까지 최종 운반</li>
-      </ul>
+      </ol>
     </td>
   </tr>
 </table>
