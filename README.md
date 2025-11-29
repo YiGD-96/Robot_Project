@@ -47,8 +47,8 @@
 
 ### 📎 기술 스택
 
-* **환경**: Ubuntu 22.04 / ROS2 / Python
-* **기술**: MoveIt, RVIZ2, Force Control, Bézier Curve Planning
+* **환경**: Ubuntu 22.04 / Python
+* **기술**: ROS2( MoveIt, RVIZ2 tf), Force Control, Bézier Curve Planning
 * **역할 기여도**:
 
   * 패스트 스태킹 알고리즘 개발 **70%**
@@ -330,8 +330,8 @@ your_package/
 
 ### 📎 기술 스택
 
-* **환경**: Ubuntu 22.04
-* **기술**: ROS2, Gazebo, RVIZ2, PyQt 개발
+* **환경**: Ubuntu 22.04 / Python
+* **기술**: ROS2( Gazebo, RVIZ2 ), PyQt
 * **역할 기여도**:
 
   * Gazebo 모델 제작 및 물리 엔진 구성 : **90%**
